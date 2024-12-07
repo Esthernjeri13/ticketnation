@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Sign-Up Page</title>
+    <!-- Bootstrap CSS -->
+     <!-- Vendor CSS Files -->
+  <link href="../../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../../static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../../static/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../../static/assets/css/main.css" rel="stylesheet">
+</head>
+<body class="d-flex align-items-center justify-content-center vh-100">
+    <div class="signup-container">
+        <div class="card shadow-lg p-4">
+            <div class="card-body">
+                <h2 class="text-center mb-4 fw-bold text-success">Create an Account</h2>
+                <p class="text-center text-muted">Join us and start your journey!</p>
+                <form>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control rounded-pill" id="username" placeholder="Choose a username">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control rounded-pill" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control rounded-pill" id="password" placeholder="Create a password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control rounded-pill" id="confirmPassword" placeholder="Re-enter your password">
+                    </div>
+                    <div class="form-check mb-4">
+                        <input class="form-check-input" type="checkbox" id="terms">
+                        <label class="form-check-label" for="terms">
+                            I agree to the <a href="#" class="text-success text-decoration-none">Terms & Conditions</a>
+                        </label>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-success w-100 rounded-pill">Sign Up</button>
+                    </div>
+                </form>
+                <div class="mt-4 text-center">
+                    <p class="small">Already have an account? <a href="{% url 'login' %}" class="text-success text-decoration-none">Log In</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vendor JS Files -->
+  <script src="../../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="../../static/assets/vendor/aos/aos.js"></script>
+  <script src="../../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../../static/assets/js/main.js"></script>
+</body>
+</html>

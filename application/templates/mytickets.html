@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <body>
+    <main>
+     <!-- Page Title -->
+    <div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="home.html">Home</a></li>
+            <li class="current">Agents</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+       <section class="my-5">
+    <div class="container">
+        <div class="table-responsive shadow-lg rounded">
+            <table class="table table-hover table-bordered align-middle text-center">
+                <thead class="bg-success text-white">
+                    <tr>
+                        <th class="py-3">Event Name</th>
+                        <th class="py-3">Number of Tickets</th>
+                        <th class="py-3">Ticket Type</th>
+                        <th class="py-3">Ticket Price</th>
+                        <th class="py-3">Payment Method</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ticket in data %}
+                    <tr>
+                        <td class="py-2">{{ ticket.name }}</td>
+                        <td class="py-2">{{ ticket.number_of_tickets }}</td>
+                        <td class="py-2">
+                            <span class="badge {% if ticket.ticket_type == 'VIP' %} bg-warning text-dark {% else %} bg-primary {% endif %}">
+                                {{ ticket.ticket_type }}
+                            </span>
+                        </td>
+                        <td class="py-2">KSH {{ ticket.ticket_price }}</td>
+                        <td class="py-2">
+                            <i class="bi {% if ticket.payment_method == 'M-Pesa' %}bi-phone{% else %}bi-credit-card{% endif %} me-2"></i>
+                            {{ ticket.payment_method }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+    </main>
+    </body>
+    <footer id="footer" class="footer light-background">
+
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-geo-alt icon"></i>
+          <div class="address">
+            <h4>Address</h4>
+            <p>Muthaiga</p>
+            <p>Nairobi, Kenya</p>
+            <p></p>
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-telephone icon"></i>
+          <div>
+            <h4>Contact</h4>
+            <p>
+              <strong>Phone:</strong> <span>+2547 28 141 722</span><br>
+              <strong>Email:</strong> <span>msmungai00@gmail.com</span><br>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-clock icon"></i>
+          <div>
+            <h4>Opening Hours</h4>
+            <p>
+              <strong>Mon-Sat:</strong> <span>8AM -  5PM</span><br>
+              <strong>Sunday</strong>: <span>Closed</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4>Follow Us</h4>
+          <div class="social-links d-flex">
+            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Ticket City</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+      </div>
+    </div>
+
+  </footer>
+     <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="../../static/assets/vendor/aos/aos.js"></script>
+  <script src="../../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../../static/assets/js/main.js"></script>
+{% endblock %}

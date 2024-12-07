@@ -1,0 +1,285 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+
+      <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-item active">
+          <img src="../../static/assets/img/ft1.jpg" alt="">
+
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="../../static/assets/img/ft2.jpg" alt="">
+          <div class="carousel-container">
+            <div>
+
+            </div>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="../../static/assets/img/ft3.jpg" alt="">
+          <div class="carousel-container">
+            <div>
+
+            </div>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+        <ol class="carousel-indicators"></ol>
+
+      </div>
+    </section>
+    <div class="header-section">
+        <div class="container-fluid text-white py-3 px-4">
+            <!-- Main Heading -->
+            <h1 class="header-title">Premier League Tickets</h1>
+            <!-- Sub-navigation -->
+            <div class="d-flex align-items-center sub-nav mt-2">
+                <div class="me-4">
+                    <button class="btn btn-success"><i class="bi bi-geo-alt"></i> Use my location</button>
+                </div>
+                <div class="me-4">
+                    <button class="btn btn-success dropdown-toggle">Nairobi</button>
+                </div>
+                <div class="me-4">
+                    <button class="btn btn-success dropdown-toggle">All dates</button>
+                </div>
+                <div>
+                    <button class="btn btn-success dropdown-toggle">All venues</button>
+                </div>
+            </div>
+        </div>
+        <hr class="header-divider btn btn-success">
+    </div>
+
+  <div>
+  <style>
+    .card {
+      border: 1px solid green;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .card:hover {
+      background-color: #e8fce9;
+    }
+
+    .card-body {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .date {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .capacity {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .btn-custom {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+
+    .selling-fast {
+      color: red;
+      font-weight: bold;
+    }
+
+  </style>
+
+  <div class="container my-4">
+    <div class="card">
+      <div class="card-body">
+        <div>
+
+          <p class="date">09 DEC 2024 SUN 17:00</p>
+          <p class="title">Spurs vs Chelsea - Sunday</p>
+          <p class="subtitle">Tottenham HotSpur Stadium<br>London</p>
+          <p class="capacity">Regular:Ksh 8000 , VIP:Ksh 10000</p>
+
+        </div>
+        <div>
+            <form method="POST" action="{% url 'ticket' %}">
+                    {% csrf_token %}
+          <button class="btn btn-outline-success btn-custom">See tickets</button>
+            </form>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card-body">
+        <div>
+          <p class="date">07 DEC 2024</p>
+          <p class="title">LiverPool vs Everton - Saturday</p>
+          <p class="subtitle">Goodison Park<br>LiverPool</p>
+          <p class="capacity">Regular:Ksh 8000 , VIP:Ksh 10000</p>
+          <p class="selling-fast">Selling fast</p>
+        </div>
+        <div>
+            <form method="POST" action="{% url 'ticket' %}">
+                    {% csrf_token %}
+          <button class="btn btn-outline-success btn-custom">Buy ticket</button>
+            </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div>
+          <p class="date">08 DEC 2024</p>
+          <p class="title">Crystal Palace vs Man City - Saturday</p>
+          <p class="subtitle">Selhurst Park<br>London</p>
+          <p class="capacity">Regular:Ksh 10000 , VIP:Ksh 12000</p>
+        </div>
+        <div>
+            <form method="POST" action="{% url 'ticket' %}">
+                    {% csrf_token %}
+          <button class="btn btn-outline-success btn-custom">Buy ticket</button>
+            </form>
+        </div>
+      </div>
+    </div>
+      <div class="card">
+      <div class="card-body">
+        <div>
+          <p class="date">08 NOV 2024</p>
+          <p class="title">Newcastle vs BrentFord- Saturday</p>
+          <p class="subtitle">Gtech Community Stadium<br>BrentFord</p>
+          <p class="capacity">Regular:Ksh 11000 , VIP:Ksh 15000</p>
+          <p class="selling-fast">Selling fast</p>
+        </div>
+        <div>
+            <form method="POST" action="{% url 'ticket' %}">
+                    {% csrf_token %}
+          <button class="btn btn-outline-success btn-custom">Buy ticket</button>
+            </form>
+        </div>
+      </div>
+    </div>
+      <div class="card">
+      <div class="card-body">
+        <div>
+          <p class="date">09 DEC 2024</p>
+          <p class="title">Fulham vs Arsenal - Sunday</p>
+          <p class="subtitle">Carven Cottage <br>London</p>
+          <p class="capacity">Regular:Ksh 8000 , VIP:Ksh 10000/p>
+        </div>
+        <div>
+            <form method="POST" action="{% url 'ticket' %}">
+                    {% csrf_token %}
+          <button class="btn btn-outline-success btn-custom">Buy ticket</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <footer id="footer" class="footer light-background">
+
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-geo-alt icon"></i>
+          <div class="address">
+            <h4>Address</h4>
+            <p>Muthaiga</p>
+            <p>Nairobi, Kenya</p>
+            <p></p>
+          </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-telephone icon"></i>
+          <div>
+            <h4>Contact</h4>
+            <p>
+              <strong>Phone:</strong> <span>+2547 28 141 722</span><br>
+              <strong>Email:</strong> <span>msmungai00@gmail.com</span><br>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 d-flex">
+          <i class="bi bi-clock icon"></i>
+          <div>
+            <h4>Opening Hours</h4>
+            <p>
+              <strong>Mon-Sat:</strong> <span>8AM -  5PM</span><br>
+              <strong>Sunday</strong>: <span>Closed</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h4>Follow Us</h4>
+          <div class="social-links d-flex">
+            <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Ticket City</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="../../static/assets/vendor/aos/aos.js"></script>
+  <script src="../../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../../static/assets/js/main.js"></script>
+{% endblock %}
